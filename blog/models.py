@@ -12,10 +12,10 @@ class Post(models.Model):
     text = models.TextField()
     # asociar el metodo now como variable y no como metodo. es decir, no usar ().
     created_date = models.DateTimeField(default= now)
-    published_date = models.DateTimeField(blank= True, null= True, auto_now_add = True)
+    published_date = models.DateTimeField(blank= True, null= True)
 
     def publish(self):
-        self.published_date = timezone.now()
+        self.published_date = now()
         self.save()
 
 
