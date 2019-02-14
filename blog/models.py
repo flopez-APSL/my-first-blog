@@ -7,7 +7,7 @@ from django.utils.timezone import now
 from django.contrib.auth.models import User
 
 class Post(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete= models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
     title = models.CharField(max_length= 200)
     text = models.TextField()
     # asociar el metodo now como variable y no como metodo. es decir, no usar ().
